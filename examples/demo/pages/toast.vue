@@ -1,21 +1,22 @@
 <template>
   <div class="page-toast">
-    <white-space title="基本用法">
+    <demo-block title="基本用法">
       <wd-button type="primary" @click="handleToast1">toast</wd-button>
-    </white-space>
-    <white-space title="类型toast">
+      <wd-button type="primary" @click="handleToast9">长文案</wd-button>
+    </demo-block>
+    <demo-block title="类型toast">
       <wd-button type="primary" @click="handleToast2">成功toast</wd-button>
       <wd-button type="primary" @click="handleToast3">错误toast</wd-button>
       <wd-button type="primary" @click="handleToast4">警告toast</wd-button>
-    </white-space>
-    <white-space title="提示位置">
+    </demo-block>
+    <demo-block title="提示位置">
       <wd-button type="primary" @click="handleToast5">顶部toast</wd-button>
       <wd-button type="primary" @click="handleToast6">底部toast</wd-button>
-    </white-space>
-    <white-space title="loading">
+    </demo-block>
+    <demo-block title="loading">
       <wd-button type="primary" @click="handleToast7">Loading加载</wd-button>
        <wd-button type="primary" @click="handleToast8">Spinner类型loading</wd-button>
-    </white-space>
+    </demo-block>
   </div>
 </template>
 
@@ -67,6 +68,9 @@ export default {
       setTimeout(() => {
         this.$toast.close()
       }, 3000)
+    },
+    handleToast9 () {
+      this.$toast('这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的文案')
     }
   }
 }

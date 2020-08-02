@@ -98,13 +98,18 @@ export default {
   methods: {
     toggle () {
       if (this.checkboxGroup) {
+        this.$emit('change', !this.isChecked)
         this.checkboxGroup.changeValue(this.value)
-      } else if (this.trueValue && this.falseValue) {
-        this.$emit('input', this.isChecked ? this.falseValue : this.trueValue)
       } else {
-        this.$emit('input', !this.value)
+        let newValue
+        if (this.trueValue && this.falseValue) {
+          newValue = this.isChecked ? this.falseValue : this.trueValue
+        } else {
+          newValue = !this.value
+        }
+        this.$emit('input', newValue)
+        this.$emit('change', newValue)
       }
-      this.$emit('change', this.value)
     }
   }
 }

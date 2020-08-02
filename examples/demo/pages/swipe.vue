@@ -1,27 +1,27 @@
 <template>
   <div class="page-swipe">
-    <space title="基本用法">
+    <demo-block title="基本用法" transparent>
       <wd-swipe class="number-swipe">
         <wd-swipe-item v-for="item in 4" :key="item">
           {{ item }}
         </wd-swipe-item>
       </wd-swipe>
-    </space>
-    <space title="禁止循环和自动轮播">
+    </demo-block>
+    <demo-block title="禁止循环和自动轮播" transparent>
       <wd-swipe class="number-swipe" :loop="false" :autoplay="false" @change="toastChange">
         <wd-swipe-item v-for="item in 4" :key="item">
           {{ item }}
         </wd-swipe-item>
       </wd-swipe>
-    </space>
-    <space title="留白">
+    </demo-block>
+    <demo-block title="留白" transparent>
       <wd-swipe hide-indicators :autoplay="false" :space="80/750">
         <wd-swipe-item v-for="item in imgs" :key="item">
           <img :src="item" class="swipe-img" />
         </wd-swipe-item>
       </wd-swipe>
-    </space>
-    <space title="自定义指示器">
+    </demo-block>
+    <demo-block title="自定义指示器" transparent>
       <wd-swipe class="number-swipe" @change="handleItemChange">
         <wd-swipe-item v-for="item in 4" :key="item">
           {{ item }}
@@ -32,14 +32,21 @@
           </div>
         </template>
       </wd-swipe>
-    </space>
-    <space title="纵向轮播">
+    </demo-block>
+    <demo-block title="关闭动画效果" transparent>
+      <wd-swipe class="number-swipe" :animate="false">
+        <wd-swipe-item v-for="item in 4" :key="item">
+          {{ item }}
+        </wd-swipe-item>
+      </wd-swipe>
+    </demo-block>
+    <demo-block title="纵向轮播" transparent>
       <wd-swipe class="number-swipe" vertical height="150px">
         <wd-swipe-item v-for="item in 4" :key="item">
           {{ item }}
         </wd-swipe-item>
       </wd-swipe>
-    </space>
+    </demo-block>
   </div>
 </template>
 
@@ -57,7 +64,7 @@ export default {
   },
   methods: {
     toastChange (index) {
-      this.$toast(`轮播到第${index}张`)
+      this.$toast(`轮播到第${index + 1}张`)
     },
     handleItemChange (index) {
       this.customIndex = index

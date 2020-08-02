@@ -8,14 +8,20 @@ import Cell from '../packages/cell'
 import CellGroup from '../packages/cell-group'
 import Checkbox from '../packages/checkbox'
 import CheckboxGroup from '../packages/checkbox-group'
+import Col from '../packages/col'
 import Collapse from '../packages/collapse'
 import CollapseItem from '../packages/collapse-item'
 import DatetimePicker from '../packages/datetime-picker'
 import DatetimePickerView from '../packages/datetime-picker-view'
+import DropMenu from '../packages/drop-menu'
+import DropMenuItem from '../packages/drop-menu-item'
+import Grid from '../packages/grid'
+import GridItem from '../packages/grid-item'
 import Icon from '../packages/icon'
 import InfiniteLoad from '../packages/infinite-load'
 import Input from '../packages/input'
 import InputNumber from '../packages/input-number'
+import Img from '../packages/img'
 import Lazyload from '../packages/lazyload'
 import Loading from '../packages/loading'
 import MessageBox from '../packages/message-box'
@@ -30,8 +36,11 @@ import PullRefresh from '../packages/pull-refresh'
 import Radio from '../packages/radio'
 import RadioGroup from '../packages/radio-group'
 import Rate from '../packages/rate'
+import Row from '../packages/row'
 import Search from '../packages/search'
 import Slider from '../packages/slider'
+import SortButton from '../packages/sort-button'
+import StatusTip from '../packages/status-tip'
 import Step from '../packages/step'
 import Steps from '../packages/steps'
 import Sticky from '../packages/sticky'
@@ -56,14 +65,20 @@ const components = [
   CellGroup,
   Checkbox,
   CheckboxGroup,
+  Col,
   Collapse,
   CollapseItem,
   DatetimePicker,
   DatetimePickerView,
+  DropMenu,
+  DropMenuItem,
+  Grid,
+  GridItem,
   Icon,
   InfiniteLoad,
   Input,
   InputNumber,
+  Img,
   Loading,
   Modal,
   Navbar,
@@ -76,8 +91,11 @@ const components = [
   Radio,
   RadioGroup,
   Rate,
+  Row,
   Search,
   Slider,
+  SortButton,
+  StatusTip,
   Step,
   Steps,
   Sticky,
@@ -113,7 +131,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.3.0',
+  version: '1.5.1',
   install,
   locale: locale.use,
   i18n: locale.i18n,
@@ -124,14 +142,20 @@ export default {
   CellGroup,
   Checkbox,
   CheckboxGroup,
+  Col,
   Collapse,
   CollapseItem,
   DatetimePicker,
   DatetimePickerView,
+  DropMenu,
+  DropMenuItem,
+  Grid,
+  GridItem,
   Icon,
   InfiniteLoad,
   Input,
   InputNumber,
+  Img,
   Lazyload,
   Loading,
   MessageBox,
@@ -146,8 +170,11 @@ export default {
   Radio,
   RadioGroup,
   Rate,
+  Row,
   Search,
   Slider,
+  SortButton,
+  StatusTip,
   Step,
   Steps,
   Sticky,
