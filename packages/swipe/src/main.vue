@@ -83,6 +83,10 @@ export default {
     space: {
       type: Number,
       default: 0
+    },
+    animate: {
+      type: Boolean,
+      default: true
     }
   },
   watch: {
@@ -107,8 +111,8 @@ export default {
       return {
         [size]: this.size * this.count + 'px',
         'padding-left': spaceLeft + 'px',
-        transform: `translate${this.vertical ? 'Y' : 'X'}(${-((this.size + spaceLeft) * this.index - delta)}px)`,
-        transition: `transform ${this.swiping ? 0 : this.duration}ms`
+        transform: `translate${this.vertical ? 'Y' : 'X'}(${-((this.size + spaceLeft) * this.index - (this.animate ? delta : 0))}px)`,
+        transition: `transform ${(this.swiping || !this.animate) ? 0 : this.duration}ms`
       }
     },
     size () {
@@ -126,7 +130,7 @@ export default {
         : this.direction === 'horizontal'
     },
     canLoop () {
-      return this.loop && !this.space
+      return this.loop && !this.space && this.count > 1
     }
   },
   methods: {
@@ -173,16 +177,16 @@ export default {
       let isLast = this.index === this.count - 1
       let isFirst = this.index === 0
 
+      if ((!this.canLoop && ((isLast && diffIndex > 0) || (isFirst && diffIndex < 0)))) {
+        return
+      }
+
       if (this.items[0] && this.canLoop) {
         this.items[0].offset = isLast && (diffIndex > 0 || delta < 0) ? (this.size * this.count) : 0
       }
 
       if (this.items[this.count - 1] && this.canLoop) {
         this.items[this.count - 1].offset = isFirst && (diffIndex < 0 || delta > 0) ? (-this.size * this.count) : 0
-      }
-
-      if (!this.canLoop && ((isLast && diffIndex > 0) || (isFirst && diffIndex < 0))) {
-        return
       }
 
       this.index += diffIndex

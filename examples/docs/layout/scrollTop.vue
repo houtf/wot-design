@@ -57,7 +57,7 @@ export default {
     color: #7f7f7f;
   }
 }
-@media (max-width: 1366px) {
+@media (max-width: 1536px) {
   .scroll-top {
     right: 20px;
   }
@@ -65,6 +65,11 @@ export default {
 @media (max-height: 750px) {
   .scroll-top {
     bottom: 40px;
+  }
+}
+@media (max-width: 773px) {
+  .scroll-top {
+    display: none;
   }
 }
 </style>

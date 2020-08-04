@@ -7,7 +7,7 @@
     }"
   >
     <a class="wd-input-number__action" :class="{ 'is-disabled': minDisabled }" @click="sub">
-      <i class="wd-input-number__sub"></i>
+      <i class="wd-icon-decrease wd-input-number__action-icon"></i>
     </a>
     <div v-if="!withoutInput" class="wd-input-number__inner">
       <input
@@ -27,7 +27,7 @@
       <i class="wd-input-number__input-border"></i>
     </div>
     <a class="wd-input-number__action" :class="{ 'is-disabled': maxDisabled }" @click="add">
-      <i class="wd-input-number__add"></i>
+      <i class="wd-icon-add wd-input-number__action-icon"></i>
     </a>
   </div>
 </template>
@@ -91,7 +91,6 @@ export default {
       return parseFloat(Math.round(value * Math.pow(10, this.precision)) / Math.pow(10, this.precision))
     },
     getPrecision (value) {
-      if (value === undefined) return 0
       const valueString = value.toString()
       const dotPosition = valueString.indexOf('.')
       let precision = 0
@@ -109,9 +108,7 @@ export default {
       if (this.stepStrictly) {
         value = this.toStrictlyStep(value)
       }
-      if (value !== undefined && this.precision !== undefined) {
-        value = this.toPrecision(value)
-      }
+      value = this.toPrecision(value)
       if (value > this.max) value = this.max
       if (value < this.min) value = this.min
       this.$emit('input', value)
