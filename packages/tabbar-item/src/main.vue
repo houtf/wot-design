@@ -51,7 +51,7 @@ export default {
         <div class="wd-tabbar-item__icon-container">
           {
             this.renderBadge
-              ? <WdBadge value={this.value} is-dot={this.dot} top={this.top} right={this.right} value={this.value} max={this.max} bg-color={this.tabbar.badgeColor}>{ActiveIcon || Icon}</WdBadge>
+              ? <WdBadge value={this.value} is-dot={this.dot} top={this.top} right={this.right} max={this.max} bg-color={this.tabbar.badgeColor}>{ActiveIcon || Icon}</WdBadge>
               : (ActiveIcon || Icon)
           }
         </div>

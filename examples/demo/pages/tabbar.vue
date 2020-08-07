@@ -12,12 +12,13 @@
         <wd-tabbar-item icon="wd-icon-bags" dot>服务</wd-tabbar-item>
         <wd-tabbar-item icon="wd-icon-dong" value="new" :top="3" :right="-8">咚咚</wd-tabbar-item>
         <wd-tabbar-item icon="wd-icon-chat" :value="7" :top="3">我</wd-tabbar-item>
+        <wd-tabbar-item icon="wd-icon-bags" value="7" :top="3">服务</wd-tabbar-item>
       </wd-tabbar>
     </demo-block>
     <demo-block title="修改颜色" transparent>
-      <wd-tabbar v-model="tabbar3" active-color="#f00" badge-color="#0083ff">
+      <wd-tabbar v-model="tabbar3" active-color="rgb(100, 100, 100)" badge-color="rgb(200, 200, 200)">
         <wd-tabbar-item icon="wd-icon-bags" dot>服务</wd-tabbar-item>
-        <wd-tabbar-item icon="wd-icon-dong">咚咚</wd-tabbar-item>
+        <wd-tabbar-item icon="wd-icon-dong" value="new">咚咚</wd-tabbar-item>
         <wd-tabbar-item icon="wd-icon-chat">我</wd-tabbar-item>
       </wd-tabbar>
     </demo-block>
@@ -49,7 +50,7 @@ export default {
     return {
       tabbar1: 0,
       tabbar2: 0,
-      tabbar3: 0,
+      tabbar3: 1,
       tabbar4: 0,
       tabbar5: 0
     }
